@@ -1,0 +1,23 @@
+<div class="container d-flex flex-wrap justify-content-center">
+    <% for (let product of products) { %>
+        <div class="card m-2 border-dark" style="width: 18rem;">
+            <img src="<%= product.image %>" style="height: 18rem;" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= product.name %>
+                </h5>
+                <p class="card-text">
+                    $<%= product.price %>
+                </p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-muted"><%= product.specs %></li>                
+            </ul>
+            <div class="card-body">
+                <a href="#" class="btn btn-danger card-link">&#9825;</a>
+                <a href="/store/<%= product.title + 's' %>/<%= product._id %>" class="btn btn-dark px-4 card-link">View</a>
+                
+            </div>
+        </div>
+        <% } %>
+</div>

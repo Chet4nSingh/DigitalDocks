@@ -1,0 +1,48 @@
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+.item:nth-of-type(1) {
+    background: url(/images/Samsung-Galaxy-S24-S24-Plus-and-Ultra-Price-Features-and-Highlights.jpg) center no-repeat;
+    background-size: 200%;
+}
+
+.item:nth-of-type(2) {
+    background: url(/images/pexels-veeterzy-303383.jpg) center no-repeat;
+    background-size: 160%;
+}
+
+.item:nth-of-type(3) {
+    background: url(/images/brandon-lee-jT5mSPEteVc-unsplash.jpg) center no-repeat;
+    background-size: 160%;
+}
+
+.item:nth-of-type(4) {
+    background: url(/images/pexels-mintworkspace-19304049.jpg) center no-repeat;
+    background-size: 100%;
+}
+
+.item:nth-of-type(5) {
+    background: url(/images/pexels-tdcat-437036.jpg) center no-repeat;
+    background-size: 160%;
+}
+
+.item:nth-of-type(6) {
+    background: url(/images/akhil-yerabati-Q2uV5TkjNz8-unsplash.jpg) center no-repeat;
+    background-size: 200%;
+}
+

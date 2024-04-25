@@ -1,0 +1,58 @@
+<%- include('../includes/head', title='DigitalDocks Official Website' ) %>
+
+<%- include('../includes/navbar') %>
+
+    <div id="carouselExampleAutoplaying" class="carousel my-5 slide vh-100 overflow-hidden" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="/images/akhil-yerabati-Q2uV5TkjNz8-unsplash.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="/images/ady-teenagerinro-V8MNPJe8Nt8-unsplash.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="/images/brandon-lee-jT5mSPEteVc-unsplash.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div id="categories" class="container min-vh-100 mb-5">
+        <h1 class="display-1 text-center mb-5"><strong>Categories</strong></h1>
+        <div class="categories row justify-content-center" style="height: 80vh;">
+            <div class="item col-3 m-2 bg-secondary">
+                <h2><a href="/store/mobiles">Mobiles</a></h2>
+            </div>
+            <div class="item col-3 m-2 bg-secondary">
+                <h2><a href="/store/computers">Computers</a></h2>
+            </div>
+            <div class="item col-3 m-2 bg-secondary">
+                <h2><a href="/store/accessories">Accessories</a></h2>
+            </div>
+            <div class="item col-3 m-2 bg-secondary">
+                <h2><a href="/store/peripherals">Peripherals</a></h2>
+            </div>
+            <div class="item col-3 m-2 bg-secondary">
+                <h2><a href="/store/smart-wearables">Smart-Wearables</a></h2>
+            </div>
+            <div class="item col-3 m-2 bg-secondary">
+                <h2><a href="/store/audios">Audio</a></h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="featured" class="container min-vh-100 mb-5">
+        <h1 class="display-1 text-center mb-5"><strong>Featured</strong></h1>
+        <%- include('../includes/products', { products }) %>        
+    </div>
+
+<%- include('../includes/foot') %>

@@ -1,0 +1,47 @@
+<%- include('../includes/head', title='Store') %>
+    <%- include('../includes/navbar') %>
+
+        <h1 class="h1 display-2 text-center mt-5 mb-5"><strong>Store</strong></h1>
+        <div class="container mb-5">
+            <div class="mb-5 row justify-content-center text-center">
+                <div class="col">
+                    <div class="p-3 bg-dark rounded">
+                        <a class="store-category" href="/store">All</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 bg-dark rounded">
+                        <a class="store-category" href="/store/accessories">Accessories</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 bg-dark rounded">
+                        <a class="store-category" href="/store/audios">Audio</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 bg-dark rounded">
+                        <a class="store-category" href="/store/computers">Computers</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 bg-dark rounded">
+                        <a class="store-category" href="/store/mobiles">Mobiles</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 bg-dark rounded">
+                        <a class="store-category" href="/store/peripherals">Peripherals</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3 bg-dark rounded">
+                        <a class="store-category" href="/store/smart-wearables">Smart-Wearables</a>
+                    </div>
+                </div>
+            </div>
+            <%- include('../includes/products', { products }) %>
+        </div>     
+        
+        
+        <%- include('../includes/foot') %>

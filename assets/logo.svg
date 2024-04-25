@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="80" height="80">
+    <!-- Logo Circle -->
+    <circle cx="100" cy="100" r="60" fill="#333"/>
+    <!-- Logo Icon (e.g., a musical note) -->
+    <path d="M100,60 Q120,70 100,80 Q80,90 100,100 Q120,110 100,120 Q80,130 100,140 Q120,150 100,160 Q80,170 100,180" fill="#FFf"/>
+</svg>
