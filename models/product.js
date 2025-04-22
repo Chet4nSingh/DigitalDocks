@@ -16,7 +16,7 @@ const productSchema = new Schema({
         required: true
     },
     price: Number,
-    rating: String,
+    rating: Number,
     specs: [String],
     description: String,    
 })

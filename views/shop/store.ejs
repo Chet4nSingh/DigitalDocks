@@ -2,8 +2,23 @@
     <%- include('../includes/navbar') %>
 
         <h1 class="h1 display-2 text-center mt-5 mb-5"><strong>Store</strong></h1>
+        
         <div class="container mb-5">
-            <div class="mb-5 row justify-content-center text-center">
+            <div class="dropdown mb-5 offset-10">
+                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/store">All</li>
+                  <li><a class="dropdown-item" href="/store/accessories">Accessories</a></li>
+                  <li><a class="dropdown-item" href="/store/audios">Audio</a></li>
+                  <li><a class="dropdown-item" href="/store/computers">Computers</a></li>
+                  <li><a class="dropdown-item" href="/store/mobiles">Mobiles</a></li>
+                  <li><a class="dropdown-item" href="/store/peripherals">Peripherals</a></li>
+                  <li><a class="dropdown-item" href="/store/smart-wearables">Smart-Wearables</a></li>
+                </ul>
+            </div>
+            <!-- <div class="mb-5 row justify-content-center text-center">
                 <div class="col">
                     <div class="p-3 bg-dark rounded">
                         <a class="store-category" href="/store">All</a>
@@ -39,7 +54,7 @@
                         <a class="store-category" href="/store/smart-wearables">Smart-Wearables</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <%- include('../includes/products', { products }) %>
         </div>     
         

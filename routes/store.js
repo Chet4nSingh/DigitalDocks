@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ExpressError = require('../helpers/ExpressError');
 const catchAsync = require('../helpers/catchAsync');
+const { isLoggedIn } = require('../middleware');
 const Product = require('../models/product');
 const Cart = require('../models/cart');
 
@@ -10,7 +11,7 @@ router.get('/', catchAsync(async (req, res) => {
     res.render('shop/store', { products, categoryId: 'all' });
 }));
 
-router.get('/cart',  catchAsync(async (req, res) => {
+router.get('/cart', isLoggedIn, catchAsync(async (req, res) => {
   const products = await Cart.find().populate('product');
   res.render('shop/cart', { products });
 }));
@@ -32,7 +33,7 @@ router.get('/:categoryId/:productId', catchAsync(async (req, res) => {
     res.render('shop/details', { product });
 }));
 
-router.post('', catchAsync(async (req, res) => {
+router.post('/cart', isLoggedIn, catchAsync(async (req, res) => {
     const { productId } = req.body;        
     if (await Cart.exists({ product: productId })) {
       const inCart = await Cart.findOne({ product: productId });
@@ -47,7 +48,7 @@ router.post('', catchAsync(async (req, res) => {
     res.redirect(`/store/cart`);
 }));
 
-router.delete('/cart', async(req, res) => {
+router.delete('/cart', isLoggedIn, catchAsync(async(req, res) => {
   const { cartId } = req.body;
   const product = await Cart.findById(cartId);
   if (product.quantity > 1) {
@@ -58,6 +59,6 @@ router.delete('/cart', async(req, res) => {
   }
   req.flash('success', 'Product removed from cart');
   res.redirect('/store/cart');
-});
+}));
 
 module.exports = router;

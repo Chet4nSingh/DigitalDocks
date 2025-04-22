@@ -10,9 +10,12 @@ const ExpressError = require('./helpers/ExpressError');
 const catchAsync = require('./helpers/catchAsync');
 const Product = require('./models/product');
 const Cart = require('./models/cart');
+const User = require('./models/user');
 const passport = require('passport');
-const localStrategy = require('passport-local');
-const store = require('./routes/store');
+const LocalStrategy = require('passport-local');
+const storeRoutes = require('./routes/store');
+const userRoutes =require('./routes/users');
+
 
 mongoose
   .connect("mongodb://localhost/ecommerce-project")
@@ -45,13 +48,22 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
   res.locals.success = req.flash('success');
   res.locals.error = req.flash('error');
   next();
 })
 
-app.use('/store', store);
+app.use('/', userRoutes);
+app.use('/store', storeRoutes);
 
 app.get('/home', async (req, res) => {
     const products = await Product.find({ rating: { $gte: 4 }}, null, { limit: 8 });
